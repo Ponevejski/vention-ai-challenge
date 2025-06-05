@@ -1,0 +1,22 @@
+Hey
+
+I have a task for you
+
+We should decide what kind of DB we would better use in the project
+
+The initial requirements are: 
+Social platform with millions of users
+Need to store profiles, posts, and connections between users
+High data read speed required
+Expected 80% read operations, 20% write operations
+Scalability is important as the user base grows
+
+Check it out please. We would continue step-by-step on each option.
+So, lets start
+
+1. Identify the key needs
+2. Evaluate Database Types
+3. Shortlist Candidates
+4. Select Best Fit
+5.  Address Trade-offs
+6. Provide a final recommendation with a summary table comparing options.

@@ -1,0 +1,23 @@
+Perform the following tasks on the given input text and return the results in structured JSON format:
+
+1. **Summarization**: 
+   - Generate a concise abstractive summary (2-3 sentences) retaining key points.
+   
+2. **Sentiment Analysis**:
+   - Classify sentiment as Positive, Neutral, or Negative.
+   - Assign a sentiment score (-1 to +1, where -1=very negative, 0=neutral, +1=very positive).
+
+3. **Output Format**:
+   ```json
+   {
+     "summary": "[concise summary]",
+     "sentiment": {
+       "classification": "[Positive/Neutral/Negative]",
+       "score": [numerical_score]
+     },
+     "metadata": {
+       "text_length": [character_count],
+       "topics": ["list", "of", "key", "topics"],
+       "timestamp": "[ISO_8601_timestamp]"
+     }
+   }	

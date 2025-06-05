@@ -1,0 +1,12 @@
+{
+  "summary": "Remote work has grown in popularity due to its benefits, such as increased employee satisfaction and reduced costs for companies, though challenges like isolation and productivity issues persist. Hybrid models and improved technology are enabling businesses to balance flexibility and collaboration effectively.",
+  "sentiment": {
+    "classification": "Neutral",
+    "score": 0.2
+  },
+  "metadata": {
+    "text_length": 1024,
+    "topics": ["remote work", "flexibility", "productivity", "hybrid models", "technology"],
+    "timestamp": "2025-06-03T00:00:00Z"  
+  }
+}

@@ -1,0 +1,24 @@
+Act as a QA engineer refining bug reports. Convert the following informal bug note into a structured ticket using this format:  
+
+**Title**  
+[Concise, specific issue summary]  
+
+**Description**  
+[Brief explanation of the problem]  
+
+**Steps to Reproduce**  
+1. [Step 1]  
+2. [Step 2]  
+...  
+
+**Expected vs Actual Behavior**  
+- **Expected:** [What *should* happen]  
+- **Actual:** [What *does* happen]  
+
+**Environment (if known)**  
+- OS: [e.g., macOS Ventura]  
+- Browser: [e.g., Safari 16.3]  
+- Device: [e.g., iPhone 14]  
+
+**Severity/Impact**  
+[Low/Medium/High/Critical – justify briefly]  
