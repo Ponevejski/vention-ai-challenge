@@ -1,0 +1,64 @@
+**Task:** Analyze unstructured product feedback comments and extract structured insights in JSON format. Use the following steps:  
+
+1. **Relevance Check:**  
+   - If the feedback is irrelevant to the product (e.g., off-topic, spam), set `isRelevant: false` and skip further analysis.  
+   - If relevant, proceed with sentiment and detail extraction.  
+
+2. **Sentiment Analysis:**  
+   - Classify as `Positive`, `Negative`, `Neutral`, or `Mixed` based on tone and content.  
+
+3. **Detail Extraction:**  
+   - Identify `mainSubject` (primary product/feature discussed).  
+   - List `positives` (explicit praise or strengths).  
+   - List `painPoints` (complaints or issues).  
+   - Infer `improvementSuggestions` (even if implicit).  
+   - Tag `featuresMentioned` (specific functionalities).  
+   - Gauge `userExpertise` (`Experienced`, `Novice`, or `Unknown`).  
+
+**Few-Shot Examples:**  
+```json
+// Example 1: Negative feedback with technical details  
+{
+  "sentiment": "Negative",
+  "isRelevant": true,
+  "mainSubject": "Mouse sensor",
+  "positives": [],
+  "painPoints": ["Sensor stops tracking intermittently", "Faulty dongle"],
+  "improvementSuggestions": ["Fix sensor stability", "Improve dongle reliability"],
+  "featuresMentioned": ["8000Hz polling rate"],
+  "userExpertise": "Experienced"
+}
+
+// Example 2: Mixed feedback on value proposition  
+{
+  "sentiment": "Mixed",
+  "isRelevant": true,
+  "mainSubject": "Product value",
+  "positives": ["No flaws in performance"],
+  "painPoints": ["Overpriced compared to alternatives"],
+  "improvementSuggestions": ["Adjust pricing strategy"],
+  "featuresMentioned": [],
+  "userExpertise": "Novice"
+}
+
+4. **Chain-of-Thought Instructions:**
+
+For each sample, first ask: Is this feedback product-related? If no, mark isRelevant: false.
+
+If yes, analyze sentiment and extract details step-by-step (e.g., "User mentions sensor issues → painPoint; suggests fixes → improvement").
+
+Infer expertise from technical terms (e.g., "8000Hz" → "Experienced").
+
+5. **Output Requirements:**
+
+- Strictly adhere to the JSON schema.
+
+- Escape special characters (e.g., \n for newlines).
+
+
+
+ **Feedback Samples to Analyze:**
+
+"Sensor just stops tracking for like a half second kinda often even at 8000hz. I've also tried it plugged in and still the same problem. First one I got I had to return also because the dongle just didnt work, $150 mouse btw"
+
+"Is it worth it? It is a product with no flaws in my opinion, if you love it go for it, but its not worth the price since you'll be able to perform the same with a cheaper product with half the specs."

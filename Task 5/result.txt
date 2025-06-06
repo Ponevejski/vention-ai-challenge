@@ -1,0 +1,43 @@
+[
+  {
+    "sentiment": "Negative",
+    "isRelevant": true,
+    "mainSubject": "Mouse sensor performance",
+    "positives": [],
+    "painPoints": [
+      "Sensor stops tracking frequently",
+      "Issue persists when plugged in",
+      "Defective dongle in first unit",
+      "High price point for quality issues"
+    ],
+    "improvementSuggestions": [
+      "Improve sensor reliability",
+      "Enhance dongle quality control",
+      "Reassess pricing for quality"
+    ],
+    "featuresMentioned": [
+      "8000Hz polling rate",
+      "Wireless dongle"
+    ],
+    "userExpertise": "Experienced"
+  },
+  {
+    "sentiment": "Mixed",
+    "isRelevant": true,
+    "mainSubject": "Product value proposition",
+    "positives": [
+      "No flaws in performance",
+      "Good for enthusiasts"
+    ],
+    "painPoints": [
+      "Overpriced compared to alternatives",
+      "Diminishing returns on specs"
+    ],
+    "improvementSuggestions": [
+      "Adjust pricing strategy",
+      "Better differentiate from competitors"
+    ],
+    "featuresMentioned": [],
+    "userExpertise": "Novice"
+  }
+]
