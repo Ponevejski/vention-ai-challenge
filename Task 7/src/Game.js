@@ -39,12 +39,14 @@ export class Game {
 
       if (ship.isSunk()) {
         return {
+          valid: true,
           hit: true,
           sunk: true,
           message: "You sunk an enemy battleship!",
         };
       }
       return {
+        valid: true,
         hit: true,
         sunk: false,
         message: "PLAYER HIT!",
@@ -53,6 +55,7 @@ export class Game {
 
     this.cpuBoard.markMiss(row, col);
     return {
+      valid: true,
       hit: false,
       sunk: false,
       message: "PLAYER MISS.",
@@ -61,10 +64,13 @@ export class Game {
 
   processCPUGuess() {
     const { row, col } = this.cpu.makeGuess();
-    if (this.cpu.guesses.has(`${row},${col}`)) {
+    const guessKey = `${row},${col}`;
+
+    if (this.cpu.guesses.has(guessKey)) {
       return this.processCPUGuess();
     }
-    this.cpu.guesses.add(`${row},${col}`);
+
+    this.cpu.guesses.add(guessKey);
 
     const ship = this.player.ships.find((ship) =>
       ship.getPositions().some((pos) => pos.row === row && pos.col === col)
@@ -77,12 +83,14 @@ export class Game {
 
       if (ship.isSunk()) {
         return {
+          valid: true,
           hit: true,
           sunk: true,
           message: "CPU sunk your battleship!",
         };
       }
       return {
+        valid: true,
         hit: true,
         sunk: false,
         message: `CPU HIT at ${row}${col}!`,
@@ -92,6 +100,7 @@ export class Game {
     this.playerBoard.markMiss(row, col);
     this.cpu.processMiss();
     return {
+      valid: true,
       hit: false,
       sunk: false,
       message: `CPU MISS at ${row}${col}.`,
@@ -119,7 +128,7 @@ export class Game {
   getBoards() {
     return {
       playerBoard: this.playerBoard.toString(),
-      cpuBoard: this.cpuBoard.toString(),
+      cpuBoard: this.cpuBoard.toString(true),
     };
   }
 }

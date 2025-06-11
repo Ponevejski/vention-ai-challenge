@@ -36,20 +36,24 @@ export class Board {
     return this.grid[row][col] === "~";
   }
 
-  toString() {
-    let result = "  ";
+  toString(hideShips = false) {
+    const lines = [];
+    // Добавляем заголовок с номерами столбцов
+    let header = "  ";
     for (let h = 0; h < this.size; h++) {
-      result += h + " ";
+      header += h + " ";
     }
-    result += "\n";
+    lines.push(header);
 
+    // Добавляем строки с данными
     for (let i = 0; i < this.size; i++) {
-      result += i + " ";
+      let row = i + " ";
       for (let j = 0; j < this.size; j++) {
-        result += this.grid[i][j] + " ";
+        const cell = this.grid[i][j];
+        row += (hideShips && cell === "S" ? "~" : cell) + " ";
       }
-      result += "\n";
+      lines.push(row);
     }
-    return result;
+    return lines;
   }
 }

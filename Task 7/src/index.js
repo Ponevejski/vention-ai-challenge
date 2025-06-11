@@ -18,14 +18,24 @@ function gameLoop() {
     console.log(`\n*** ${gameState.message} ***`);
     const boards = game.getBoards();
     console.log("\n   --- OPPONENT BOARD ---          --- YOUR BOARD ---");
-    console.log(boards.cpuBoard + "     " + boards.playerBoard);
+    const opponentLines = boards.cpuBoard;
+    const playerLines = boards.playerBoard;
+
+    for (let i = 0; i < opponentLines.length; i++) {
+      console.log(opponentLines[i] + "     " + playerLines[i]);
+    }
     rl.close();
     return;
   }
 
   const boards = game.getBoards();
   console.log("\n   --- OPPONENT BOARD ---          --- YOUR BOARD ---");
-  console.log(boards.cpuBoard + "     " + boards.playerBoard);
+  const opponentLines = boards.cpuBoard;
+  const playerLines = boards.playerBoard;
+
+  for (let i = 0; i < opponentLines.length; i++) {
+    console.log(opponentLines[i] + "     " + playerLines[i]);
+  }
 
   rl.question("Enter your guess (e.g., 00): ", (answer) => {
     if (answer.length !== 2) {
@@ -58,6 +68,8 @@ function gameLoop() {
     if (playerResult.valid) {
       const cpuResult = game.processCPUGuess();
       console.log(cpuResult.message);
+    } else {
+      console.log(playerResult.message);
     }
 
     gameLoop();
