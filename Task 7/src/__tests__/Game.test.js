@@ -59,7 +59,9 @@ describe("Game", () => {
     const boards = game.getBoards();
     expect(boards).toHaveProperty("playerBoard");
     expect(boards).toHaveProperty("cpuBoard");
-    expect(typeof boards.playerBoard).toBe("string");
-    expect(typeof boards.cpuBoard).toBe("string");
+    expect(Array.isArray(boards.playerBoard)).toBe(true);
+    expect(Array.isArray(boards.cpuBoard)).toBe(true);
+    expect(boards.playerBoard.length).toBe(11);
+    expect(boards.cpuBoard.length).toBe(11);
   });
 });
