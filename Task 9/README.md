@@ -12,7 +12,7 @@ A console application for analyzing digital services and products using OpenAI A
 1. Clone the repository:
 ```bash
 git clone <repository-url>
-cd service-analyzer
+cd Task 9
 ```
 
 2. Install dependencies:
