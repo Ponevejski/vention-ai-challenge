@@ -1,0 +1,23 @@
+{
+  "name": "product-search-ai",
+  "version": "1.0.0",
+  "description": "Консольное приложение для поиска продуктов с использованием OpenAI API",
+  "main": "product_search.js",
+  "scripts": {
+    "start": "node product_search.js",
+    "test": "node test.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.5.0",
+    "openai": "^4.20.1",
+    "readline": "^1.3.0"
+  },
+  "keywords": [
+    "openai",
+    "product-search",
+    "ai",
+    "console-app"
+  ],
+  "author": "Vention Challenge",
+  "license": "MIT"
+}
