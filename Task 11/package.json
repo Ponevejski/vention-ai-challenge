@@ -1,0 +1,16 @@
+{
+  "name": "audio-analyzer",
+  "version": "1.0.0",
+  "description": "A console application to transcribe, summarize, and analyze audio files using OpenAI APIs.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.5.0",
+    "openai": "^5.5.1"
+  }
+}
